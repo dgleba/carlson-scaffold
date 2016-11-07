@@ -1,0 +1,49 @@
+
+
+carlson training records app - 2016-11-05_11.48.33-AM
+
+Script for scaffold:
+
+lookup template..
+
+rails generate scaffold Tr  name:string active_status:integer sort:integer
+rails generate scaffold Tr  name:string active_status:integer sort:integer
+
+-f  --no-migration
+
+categorization tables..
+
+rails generate scaffold TrCustomer    name:string active_status:integer sort:integer
+rails generate scaffold TrProgram     name:string active_status:integer sort:integer
+rails generate scaffold TrPart        name:string active_status:integer sort:integer
+rails generate scaffold TrType        name:string active_status:integer sort:integer
+rails generate scaffold TrCell        name:string active_status:integer sort:integer
+
+rails generate scaffold StfAsset assetnum description:string    active_status:integer sort:integer --no-migration
+
+main app tables...
+
+rails generate scaffold StfEmployee clocknum:string name:string active_status:integer sort:integer --no-migration
+
+rails generate scaffold TrTrainingEmployee name:string description:string output:text tr_training_record:references employee:references --no-migration
+
+rails generate scaffold TrCourse veh_reg_no:string category:string name:string desc:string photo:binary daily_rate:decimal features:string color:string --no-migration
+
+rails generate scaffold TrTrainingRecord   tr_course:references training_date:date hours:float tr_type:references  tr_customer:references  tr_program:references  tr_part:references  tr_cell:references stf_asset:references user:references   --no-migration
+
+____________________
+
+Rail263:
+Script for scaffold:
+
+rails generate scaffold Customer name:string address:string phone:string discount:float user:references --no-migration
+
+rails generate scaffold PasengerList clocknum:string name:string active:boolean --no-migration
+
+rails generate scaffold Passenger name:string description:string output:text rental_record:references pasenger_list:references --no-migration
+
+rails generate scaffold Vehicle veh_reg_no:string category:string name:string desc:string photo:binary daily_rate:decimal features:string color:string --no-migration
+
+rails generate scaffold RentalRecord customer:references vehicle:references start_date:date end_date:date lastUpdated:datetime --no-migration
+
+

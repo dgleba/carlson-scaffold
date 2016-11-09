@@ -19,17 +19,21 @@ rails generate scaffold TrPart        name:string active_status:integer sort:int
 rails generate scaffold TrType        name:string active_status:integer sort:integer
 rails generate scaffold TrCell        name:string active_status:integer sort:integer
 
-rails generate scaffold StfAsset assetnum description:string    active_status:integer sort:integer --no-migration
+rails generate scaffold StfAsset assetnum description:string   active_status:integer sort:integer --no-migration
 
 main app tables...
 
-rails generate scaffold StfEmployee clocknum:string name:string active_status:integer sort:integer --no-migration
+rails generate scaffold StfEmployee clocknum:string name:string active_status:integer sort:integer 
 
-rails generate scaffold TrTrainingEmployee name:string description:string output:text tr_training_record:references employee:references --no-migration
+rails generate scaffold TrTrainingEmployee name:string description:string output:text tr_training_record:references employee:references 
 
-rails generate scaffold TrCourse veh_reg_no:string category:string name:string desc:string photo:binary daily_rate:decimal features:string color:string --no-migration
+rails generate scaffold TrCourse name category  description:string  
 
-rails generate scaffold TrTrainingRecord   tr_course:references training_date:date hours:float tr_type:references  tr_customer:references  tr_program:references  tr_part:references  tr_cell:references stf_asset:references user:references   --no-migration
+rails generate scaffold TrTrainingRecord   tr_course:references training_date:date  details_of_training:text hours_trained:float \
+location swi \
+tr_type:references  tr_customer:references  tr_program:references  tr_part:references  tr_cell:references stf_asset:references \
+user:references  \
+ --no-migration
 
 ____________________
 

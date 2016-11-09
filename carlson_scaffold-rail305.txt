@@ -25,7 +25,7 @@ main app tables...
 
 rails generate scaffold StfEmployee clocknum:string name:string active_status:integer sort:integer 
 
-rails generate scaffold TrTrainingEmployee name:string description:string output:text tr_training_record:references employee:references 
+rails generate scaffold TrTrainingEmployee name:string description:string output:text tr_training_record:references stf_employee:references 
 
 rails generate scaffold TrCourse name category  description:string  
 

@@ -30,7 +30,7 @@ rails generate scaffold TrTrainingEmployee name:string description:string output
 rails generate scaffold TrCourse name category  description:string  
 
 rails generate scaffold TrTrainingRecord   tr_course:references training_date:date  details_of_training:text hours_trained:float \
-location swi \
+location swi  path_to_training_material \
 tr_type:references  tr_customer:references  tr_program:references  tr_part:references  tr_cell:references stf_asset:references \
 user:references  \
  --no-migration

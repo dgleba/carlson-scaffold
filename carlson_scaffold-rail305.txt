@@ -33,7 +33,6 @@ rails generate scaffold TrTrainingRecord   tr_course:references training_date:da
 location swi  path_to_training_material \
 tr_type:references  tr_customer:references  tr_program:references  tr_part:references  tr_cell:references stf_asset:references \
 user:references  \
-operator_completion:boolean operation_swi:boolean gauge_swi:boolean reject_part:boolean scrap_code:boolean \
  --no-migration
 
 ____________________
